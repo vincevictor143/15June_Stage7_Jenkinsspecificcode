@@ -6,9 +6,9 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions
 (
 		
-		features= {"src\\test\\resources\\application\\Campaign_tags.feature"},
+		features= {"@target/failedScenario.txt"},
 		glue= {"loginstep","hooks"},
-		plugin= {"pretty","html:target/cucumber-report/Campaignhtmlreport.html"},
+		plugin= {"pretty","rerun:target/failedScenario.txt"},
 //		tags="@Regression"
 		publish=true
 )

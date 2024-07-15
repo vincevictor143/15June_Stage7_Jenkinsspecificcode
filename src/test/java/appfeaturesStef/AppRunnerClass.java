@@ -8,10 +8,10 @@ import io.cucumber.testng.CucumberOptions;
 		features={"src\\test\\resources\\appfeatures"},
 		glue={"appfeaturesStef"},
 		plugin={"pretty"}
+	
 )
 
 public class AppRunnerClass extends AbstractTestNGCucumberTests 
 {
 	
-
 }

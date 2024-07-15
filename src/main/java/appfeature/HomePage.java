@@ -18,10 +18,10 @@ public class HomePage
 	@FindBy(xpath="//span[@id=\"nav-link-accountList-nav-line-1\"]")
 	private WebElement signInButton;
 	
-	@FindBy(xpath="//input[@id=\"ap_email\"]")
+	@FindBy(xpath="//input[@id=\"ap_email_login\"]")
 	private WebElement userIdTextbox;
 	
-	@FindBy(xpath="//input[@id=\"continue\"]")
+	@FindBy(xpath="//input[@type=\"submit\"]")
 	private WebElement continueButton;
 	
 	@FindBy(xpath="//input[@id=\"ap_password\"]")

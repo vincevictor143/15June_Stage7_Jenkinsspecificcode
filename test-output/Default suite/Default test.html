@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>3/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>2/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Fri Mar 29 07:34:22 IST 2024</td>
+<td>Started on:</td><td>Mon Jul 15 08:52:34 IST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>3 seconds (3429 ms)</td>
+<tr><td>Total time:</td><td>30 seconds (30661 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,79 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='appfeaturesStef.AppRunnerClass.runScenario()'><b>runScenario</b><br>Test class: appfeaturesStef.AppRunnerClass<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify the sign in page", "Home Page Functionality"</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//input[@id=&quot;ap_passwor&quot;]&quot;}
+  (Session info: chrome=126.0.6478.127)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.15.0&apos;, revision: &apos;1d14b5521b&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [43cf27162c9037f8622570d2571555b8, findElement {using=xpath, value=//input[@id=&quot;ap_passwor&quot;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.127, chrome: {chromedriverVersion: 126.0.6478.126 (d36ace6122e..., userDataDir: C:\Users\Admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51448}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51448/devtoo..., se:cdpVersion: 126.0.6478.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 43cf27162c9037f8622570d2571555b8
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:607)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:364)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:358)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy23.sendKeys(Unknown Source)
+	at appfeature.HomePage.finalSign(HomePage.java:68)
+	at appfeaturesStef.HomePage_StepDefClass.user_should_enter_the_password_as(HomePage_StepDefClass.java:61)
+	at ✽.User should enter the password as &quot;9765434652&quot;(file:///C:/Users/Admin/eclipse-workspace2/FinalProject_Amazon_Eve/src/test/resources/appfeatures/appfeature.feature:16)
+</pre></div><a href='#' onClick='toggleBox("stack-trace2052452680", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2052452680'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//input[@id=&quot;ap_passwor&quot;]&quot;}
+  (Session info: chrome=126.0.6478.127)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.15.0&apos;, revision: &apos;1d14b5521b&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [43cf27162c9037f8622570d2571555b8, findElement {using=xpath, value=//input[@id=&quot;ap_passwor&quot;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.127, chrome: {chromedriverVersion: 126.0.6478.126 (d36ace6122e..., userDataDir: C:\Users\Admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51448}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51448/devtoo..., se:cdpVersion: 126.0.6478.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 43cf27162c9037f8622570d2571555b8
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:607)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:364)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:358)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy23.sendKeys(Unknown Source)
+	at appfeature.HomePage.finalSign(HomePage.java:68)
+	at appfeaturesStef.HomePage_StepDefClass.user_should_enter_the_password_as(HomePage_StepDefClass.java:61)
+	at ✽.User should enter the password as &quot;9765434652&quot;(file:///C:/Users/Admin/eclipse-workspace2/FinalProject_Amazon_Eve/src/test/resources/appfeatures/appfeature.feature:16)
+</pre></div></td>
+<td>10</td>
+<td>appfeaturesStef.AppRunnerClass@75d4a5c2</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -76,20 +149,15 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='runner.Campaign_tag_RunnerClass.runScenario()'><b>runScenario</b><br>Test class: runner.Campaign_tag_RunnerClass<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Drafts Campaign", "Campaign functionality"</td>
+<td title='appfeaturesStef.AppRunnerClass.runScenario()'><b>runScenario</b><br>Test class: appfeaturesStef.AppRunnerClass<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verfiy the title of page", "Home Page Functionality"</td>
 <td></td>
-<td>0</td>
-<td>runner.Campaign_tag_RunnerClass@55141def</td></tr>
+<td>12</td>
+<td>appfeaturesStef.AppRunnerClass@75d4a5c2</td></tr>
 <tr>
-<td title='runner.Campaign_tag_RunnerClass.runScenario()'><b>runScenario</b><br>Test class: runner.Campaign_tag_RunnerClass<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Created Campaign", "Campaign functionality"</td>
+<td title='appfeaturesStef.AppRunnerClass.runScenario()'><b>runScenario</b><br>Test class: appfeaturesStef.AppRunnerClass<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verfiy the cart icon", "Home Page Functionality"</td>
 <td></td>
-<td>0</td>
-<td>runner.Campaign_tag_RunnerClass@55141def</td></tr>
-<tr>
-<td title='runner.Campaign_tag_RunnerClass.runScenario()'><b>runScenario</b><br>Test class: runner.Campaign_tag_RunnerClass<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Sent Campaign", "Campaign functionality"</td>
-<td></td>
-<td>0</td>
-<td>runner.Campaign_tag_RunnerClass@55141def</td></tr>
+<td>6</td>
+<td>appfeaturesStef.AppRunnerClass@75d4a5c2</td></tr>
 </table><p>
 </body>
 </html>

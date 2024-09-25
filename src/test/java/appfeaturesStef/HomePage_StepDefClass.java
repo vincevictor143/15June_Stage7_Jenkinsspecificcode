@@ -5,6 +5,7 @@ import org.testng.Assert;
 
 import appfeature.HomePage;
 import driverfactoryClass.DriverFactory;
+import driverfactoryClass.RemoteDriverFactory;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -12,12 +13,12 @@ import io.cucumber.java.en.When;
 
 public class HomePage_StepDefClass
 {
-	HomePage homepage=new HomePage(DriverFactory.getDriver());
+	HomePage homepage=new HomePage(RemoteDriverFactory.getDriver());
 	
 	@Given("User is at amazon portal")
 	public void user_is_at_amazon_portal()
 	{
-		WebDriver driver = DriverFactory.getDriver();
+		WebDriver driver = RemoteDriverFactory.getDriver();
 		driver.get("https://amazon.in");
 	}
 
@@ -52,11 +53,11 @@ public class HomePage_StepDefClass
 	@When("User should click on continue button of amazon")
 	public void user_should_click_on_continue_button_of_amazon()
 	{
-		homepage.continueButtonClick();;
+		homepage.continueButtonClick();
 	}
 
 	@When("User should enter the password as {string}")
-	public void user_should_enter_the_password_as(String pwd)
+	public void user_should_enter_the_password_as(String pwd) throws InterruptedException
 	{
 		homepage.finalSign(pwd);
 	}

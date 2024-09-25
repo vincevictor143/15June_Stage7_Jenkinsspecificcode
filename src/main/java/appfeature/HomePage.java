@@ -15,16 +15,16 @@ public class HomePage
 	@FindBy(xpath="//*[@class=\"nav-cart-icon nav-sprite\"]")
 	private WebElement cartButton;
 	
-	@FindBy(xpath="//span[@id=\"nav-link-accountList-nav-line-1\"]")
+	@FindBy(xpath="//span[text()=\"Hello, sign in\"]")
 	private WebElement signInButton;
 	
-	@FindBy(xpath="//input[@id=\"ap_email_login\"]")
+	@FindBy(xpath="//input[@id=\"ap_email\"]")
 	private WebElement userIdTextbox;
 	
 	@FindBy(xpath="//input[@type=\"submit\"]")
 	private WebElement continueButton;
 	
-	@FindBy(xpath="//input[@id=\"ap_password\"]")
+	@FindBy(xpath="//input[@type=\"password\"]")
 	private WebElement passTextBox;
 	
 	@FindBy(xpath="//input[@id=\"signInSubmit\"]")
@@ -63,8 +63,9 @@ public class HomePage
 		userIdTextbox.sendKeys(uname);
 	}
 	
-	public void finalSign(String pwd)
+	public void finalSign(String pwd) throws InterruptedException
 	{
+		Thread.sleep(2000);
 		passTextBox.sendKeys(pwd);
 		finalSignButton.click();
 	}

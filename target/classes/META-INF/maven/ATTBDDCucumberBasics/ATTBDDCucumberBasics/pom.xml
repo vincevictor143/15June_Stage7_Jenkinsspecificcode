@@ -4,6 +4,10 @@
   <artifactId>ATTBDDCucumberBasics</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   
+  <properties>
+	  <package.directory>${project.build.directory}/docker-resources</package.directory>
+  </properties>
+  
   <dependencies>
 	  
 	  <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
@@ -84,6 +88,75 @@
 		  </configuration>
         </plugin>
         
+        <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <version>3.8.0</version>
+        <executions>
+          <execution>
+            <id>copy-dependencies</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>copy-dependencies</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>
+				  ${package.directory}/libs
+			  </outputDirectory>
+              <!-- other configurations here -->
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      
+      
+      <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>3.3.0</version>
+          <configuration>
+			  <outputDirectory>
+				  ${package.directory}/libs
+			  </outputDirectory>
+		  </configuration>
+		  <executions>
+			  <execution>
+				  <goals>
+					  <goal>test-jar</goal>
+				  </goals>
+			  </execution>
+		  </executions>
+        </plugin>
+        
+        <plugin>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>3.3.1</version>
+        <executions>
+          <execution>
+            <id>copy-resources</id>
+            <!-- here the phase you need -->
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+             </execution>
+            </executions>
+            
+            <configuration>
+              <outputDirectory>${package.directory}/libs</outputDirectory>
+              <resources>          
+                <resource>
+                  <directory>src/test/resources</directory>
+                </resource>
+                 <resource>
+                  <directory>.</directory>
+                  <includes>
+					  <include>testng.xml</include>
+				  </includes>
+                </resource> 
+              </resources>              
+            </configuration>            
+      </plugin>
       </plugins>
   </build>
   

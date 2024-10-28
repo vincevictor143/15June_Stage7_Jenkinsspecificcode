@@ -9,7 +9,7 @@ import io.cucumber.testng.CucumberOptions;
 		glue={"appfeaturesStef"},
 		plugin={"pretty",
 				"html:target/cucumber-reports/amazonreports.html",
-				"json:target/cucumber-report.json"}
+				"json:target/cucumber-report.json","rerun:target/failedrun.txt"}
 		
 	
 )

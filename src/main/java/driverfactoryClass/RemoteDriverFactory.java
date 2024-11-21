@@ -17,7 +17,7 @@ public class RemoteDriverFactory
 	
 	public WebDriver initBrowser(String browsername) throws MalformedURLException
 	{
-		String host="192.168.1.41";
+		String host="localhost";
 		Capabilities capabilities;
 		
 		if(browsername.equals("Chrome"))

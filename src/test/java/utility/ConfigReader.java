@@ -14,8 +14,9 @@ public class ConfigReader
 		  String file="Config/config.properties";
 		  InputStream inputStream = getClass().getClassLoader().getResourceAsStream(file);
 		  prop.load(inputStream);
-		  String value = prop.getProperty("browser");
-		  return value;
+		  
+		String value = prop.getProperty("browser");
+		return value;
 	 }
 
 }

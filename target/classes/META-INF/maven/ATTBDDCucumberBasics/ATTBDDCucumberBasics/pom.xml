@@ -4,6 +4,7 @@
   <artifactId>ATTBDDCucumberBasics</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   
+   <!-- Creation of variable in pom.xml  -->
   <properties>
 	  <package.directory>${project.build.directory}/docker-resources</package.directory>
   </properties>
@@ -30,7 +31,6 @@
     <artifactId>webdrivermanager</artifactId>
     <version>5.8.0</version>
 </dependency>
-
 
 
 <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
@@ -62,8 +62,9 @@
   </dependencies>
   
   <build>
-      <plugins>
-		  
+	  <!-- Build name is defined using this below tag   -->
+	  <finalName>cucumbertest-docker</finalName> <!-- this name added to understand whether jar file create or not -->
+      <plugins>		  
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
@@ -78,20 +79,20 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-surefire-plugin</artifactId>
-          <version>3.2.2</version>
+          <version>3.1.2</version>
           <configuration>
 			  <suiteXmlFiles>
-				  <suiteXmlFile>
-					  testng.xml
-				  </suiteXmlFile>
+				  <suiteXmlFile>testng1.xml</suiteXmlFile>
 			  </suiteXmlFiles>
 		  </configuration>
         </plugin>
         
+        <!-- 1. Maven Dependencies Plugin  -->
+        
         <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-dependency-plugin</artifactId>
-        <version>3.8.0</version>
+        <version>3.6.1</version>
         <executions>
           <execution>
             <id>copy-dependencies</id>
@@ -100,26 +101,22 @@
               <goal>copy-dependencies</goal>
             </goals>
             <configuration>
-              <outputDirectory>
-				  ${package.directory}/libs
-			  </outputDirectory>
-              <!-- other configurations here -->
+              <outputDirectory>${package.directory}/libs</outputDirectory>
             </configuration>
           </execution>
         </executions>
       </plugin>
       
+      <!-- 2. Maven Jar Plugin used to convert code into jar file -->
       
       <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-jar-plugin</artifactId>
           <version>3.3.0</version>
           <configuration>
-			  <outputDirectory>
-				  ${package.directory}/libs
-			  </outputDirectory>
+			  <outputDirectory>${package.directory}/libs</outputDirectory>
 		  </configuration>
-		  <executions>
+          <executions>
 			  <execution>
 				  <goals>
 					  <goal>test-jar</goal>
@@ -128,35 +125,36 @@
 		  </executions>
         </plugin>
         
-        <plugin>
+         <!-- 3. Maven Resources  Plugin  -->
+      
+      	<plugin>
+        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-resources-plugin</artifactId>
         <version>3.3.1</version>
         <executions>
-          <execution>
-            <id>copy-resources</id>
-            <!-- here the phase you need -->
-            <phase>prepare-package</phase>
-            <goals>
-              <goal>copy-resources</goal>
-            </goals>
-             </execution>
-            </executions>
-            
-            <configuration>
-              <outputDirectory>${package.directory}/libs</outputDirectory>
-              <resources>          
-                <resource>
-                  <directory>src/test/resources</directory>
-                </resource>
-                 <resource>
-                  <directory>.</directory>
-                  <includes>
-					  <include>testng.xml</include>
-				  </includes>
-                </resource> 
-              </resources>              
-            </configuration>            
-      </plugin>
+			<execution>
+				<id>copy-resources</id>
+				<phase>prepare-package</phase>
+				<goals>
+					<goal>copy-resources</goal>
+				</goals>
+				 <configuration>
+          			 <outputDirectory>${package.directory}</outputDirectory>
+					   <resources>
+						   <resource>
+							   <directory>src/test/resources</directory>
+						   </resource>
+						    <resource>
+							   <directory>.</directory>
+							   <includes>
+								   <include>testng1.xml</include>
+							   </includes>
+						   </resource>
+					   </resources>
+        		</configuration>
+			</execution>
+		</executions>
+      	</plugin>
       </plugins>
   </build>
   

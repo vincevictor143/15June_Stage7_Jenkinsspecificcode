@@ -18,7 +18,7 @@ public class HomePage
 	@FindBy(xpath="//span[text()=\"Hello, sign in\"]")
 	private WebElement signInButton;
 	
-	@FindBy(xpath="//input[@id=\"ap_email\"]")
+	@FindBy(xpath="//input[@name=\"email\"]")
 	private WebElement userIdTextbox;
 	
 	@FindBy(xpath="//input[@type=\"submit\"]")
@@ -65,6 +65,7 @@ public class HomePage
 	
 	public void finalSign(String pwd) throws InterruptedException
 	{
+
 		Thread.sleep(2000);
 		passTextBox.sendKeys(pwd);
 		finalSignButton.click();

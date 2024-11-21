@@ -11,6 +11,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
 import driverfactoryClass.DriverFactory;
+import driverfactoryClass.RemoteDriverFactory;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
@@ -19,24 +20,31 @@ import utility.ConfigReader;
 public class AppHooks 
 {
 	WebDriver driver;
-    DriverFactory df;
+	RemoteDriverFactory rdf;
+//	DriverFactory df;
 	@Before
 	public void initiateBrowser() throws IOException
 	{
-        Properties prop=new Properties(); 
-        String path =System.getProperty("user.dir")+"//src//test//resources//Config//config.properties";
-        FileInputStream fis=new FileInputStream(path);
-        prop.load(fis);
-        String browsername = prop.getProperty("browser");
-		String maven_browsername = System.getProperty("clibrowser");
-		
-		if(maven_browsername!=null)
-		{
+		ConfigReader cr=new ConfigReader();
+        String browsername = cr.readConfig("browser");
+//		Properties prop=new Properties(); 
+//      String path =System.getProperty("user.dir")+"//src//test//resources//Config//config.properties";
+//		String path =System.getProperty("user.dir")+"//target//docker-resources//config.properties";
+//       FileInputStream fis=new FileInputStream(path);
+//		prop.load(fis);
+//		String browsername = prop.getProperty("browser");
+        
+    String maven_browsername = System.getProperty("clibrowser");
+	
+    if(maven_browsername!=null)
+	{
 			browsername=maven_browsername;
-		}
+    }
 		
-        df=new DriverFactory();
-		driver=df.initBrowser(browsername);
+	//	df=new DriverFactory();
+		
+		rdf = new RemoteDriverFactory();
+		driver=rdf.initBrowser(browsername);
 		driver.manage().window().maximize();
 	}
 	
